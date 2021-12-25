@@ -1,38 +1,51 @@
 # eTFT GIF Converter
 
-GIF to header (.h) generator for the ESP32 eTFT screens. [WIP]
+GIF to header (.h) generator for the ESP32 eTFT screens.
 
+
+## Changelog
+	v0.2 (12/24/2021)
+		Added Windows/Linux Interoperability
+		Added built-in resizing using arguments (-width / -height)
+		Added additional argument to specify ImageMagick directory	(-imdir)
+
+    
 ## Pre-requisites
 
-Resize the gif or video and crop it with any tool for example with:
+Install [ImageMagick](https://imagemagick.org/), making sure you check the "Install legacy utilities (e.g. convert)" option in the installer.
+<img src="https://github.com/EdwardKrayer/esp32-etft-gif-converter/img/imagemagick-installer.png">
 
 
-### ImageMagic:
+## Command Line Usage
 
-```bash
-convert walk.gif -resize 25% walk-resized.gif
+```
+eTFT-gif-converter.py
+				-i <GIF>													Required
+				-o <OUTPUT_HEADER_FILE.H>									Required
+				[-width <MAX PIXEL WIDTH OF TFT>]							Optional, defaults to  320
+				[-height <MAX PIXEL HEIGHT OF TFT>]							Optional, defaults to 240
+				[-imdir <LOCATION OF IMAGE MAGICK CONVERT EXECUTABLE>]		Optional, defaults to "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/" or "/usr/bin/"
 ```
 
-### ffmpeg:
+## Example (Windows)
 
-For example for a TFT display of 240x135 size:
-```bash
-ffmpeg -i video.mp4 -r 4 -vf scale=240:-1 video.gif
+```python
+./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
-## Usage
+## Example (Linux)
 
-```bash
-./eTFT-gif-converter.py -i <RESIZED_AND_CROPPED_ANIM.gif> -o <HEADER_NAME>.h
+```python
+./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "/usr/bin/"
 ```
 
 ### Complete Example
 
 ```bash
-git clone https://github.com/alex-arce/esp32-etft-gif-converter.git
+git clone https://github.com/EdwardKrayer/esp32-etft-gif-converter.git
 cd esp32-etft-gif-converter.git
-cp example/starcraft.gif .
-./eTFT-gif-converter.py -i starcraft.gif -o animation.h
+pip3 install -r requirements.txt
+python3 ./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
 ### Adding it to Arduino / PlatformIO / C++ 
@@ -58,9 +71,5 @@ void loop() {
 }
 ```
 
-Full implementation example [here](https://github.com/hpsaturn/esp32-etft-gif-animation-test)
-
-<a href="https://github.com/hpsaturn/esp32-etft-gif-animation-test" target="_blank"><img src="https://raw.githubusercontent.com/hpsaturn/esp32-etft-gif-animation-test/master/images/ttgo-tdisplay-demo.gif"></a>
-
-### Thanks
-Thanks a lot to [Antonio Vanegas - hpsaturn](https://github.com/hpsaturn) for his tests and his help :-D
+## Thanks to Original Author / Project
+Alex Arce @ [https://github.com/alex-arce/esp32-etft-gif-converter/](https://github.com/alex-arce/esp32-etft-gif-converter/)
