@@ -45,7 +45,7 @@ eTFT-gif-converter.py
 ```
 
 
-### Complete Example (windows/Linux)
+### Complete Example (Windows/Linux)
 
 ```bash
 git clone https://github.com/EdwardKrayer/esp32-etft-gif-converter.git
