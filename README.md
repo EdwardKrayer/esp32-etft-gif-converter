@@ -20,10 +20,10 @@ Install [ImageMagick](https://imagemagick.org/), making sure you check the "Inst
 
 ```
 eTFT-gif-converter.py
-				-i <GIF>													Required
-				-o <OUTPUT_HEADER_FILE.H>									Required
-				[-width <MAX PIXEL WIDTH OF TFT>]							Optional, defaults to  320
-				[-height <MAX PIXEL HEIGHT OF TFT>]							Optional, defaults to 240
+				-i <GIF>                                                  Required
+				-o <OUTPUT_HEADER_FILE.H>									                Required
+				[-width <MAX PIXEL WIDTH OF TFT>]							            Optional, defaults to 320
+				[-height <MAX PIXEL HEIGHT OF TFT>]							          Optional, defaults to 240
 				[-imdir <LOCATION OF IMAGE MAGICK CONVERT EXECUTABLE>]		Optional, defaults to "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/" or "/usr/bin/"
 ```
 
