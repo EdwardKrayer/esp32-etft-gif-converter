@@ -8,7 +8,7 @@ GIF to header (.h) generator for the ESP32 eTFT screens.
 		Added Windows/Linux Interoperability
 		Added built-in resizing using arguments (-width / -height)
 		Added additional argument to specify ImageMagick directory	(-imdir)
-    Replaced proprietary gif with royalty free.
+		Replaced proprietary gif with royalty free.
 
     
 ## Pre-requisites
@@ -21,35 +21,37 @@ Install [ImageMagick](https://imagemagick.org/), making sure you check the "Inst
 
 ```
 eTFT-gif-converter.py
-				-i <GIF>                                                  Required
-				-o <OUTPUT_HEADER_FILE.H>									                Required
-				[-width <MAX PIXEL WIDTH OF TFT>]							            Optional, defaults to 320
-				[-height <MAX PIXEL HEIGHT OF TFT>]							          Optional, defaults to 240
-				[-imdir <LOCATION OF IMAGE MAGICK CONVERT EXECUTABLE>]		Optional, defaults to "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/" or "/usr/bin/"
+				-i <GIF>
+				-o <OUTPUT_HEADER_FILE.H>
+				[-width <MAX PIXEL WIDTH OF TFT / DEFAULT 320>]
+				[-height <MAX PIXEL HEIGHT OF TFT / DEFAULT 240>]
+				[-imdir <LOCATION OF IMAGE MAGICK CONVERT EXECUTABLE>]
 ```
 
 
 ## Example (Windows)
 
 ```python
-./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
+./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h ^
+    -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
 
 ## Example (Linux)
 
 ```python
-./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "/usr/bin/"
+./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h \
+    -width 320 -height 240 -imdir "/usr/bin/"
 ```
 
 
-### Complete Example
+### Complete Example (windows/Linux)
 
 ```bash
 git clone https://github.com/EdwardKrayer/esp32-etft-gif-converter.git
 cd esp32-etft-gif-converter.git
 pip3 install -r requirements.txt
-python3 ./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
+python ./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240
 ```
 
 
