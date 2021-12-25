@@ -8,6 +8,7 @@ GIF to header (.h) generator for the ESP32 eTFT screens.
 		Added Windows/Linux Interoperability
 		Added built-in resizing using arguments (-width / -height)
 		Added additional argument to specify ImageMagick directory	(-imdir)
+    Replaced proprietary gif with royalty free.
 
     
 ## Pre-requisites
@@ -31,14 +32,14 @@ eTFT-gif-converter.py
 ## Example (Windows)
 
 ```python
-./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
+./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
 
 ## Example (Linux)
 
 ```python
-./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "/usr/bin/"
+./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "/usr/bin/"
 ```
 
 
@@ -48,7 +49,7 @@ eTFT-gif-converter.py
 git clone https://github.com/EdwardKrayer/esp32-etft-gif-converter.git
 cd esp32-etft-gif-converter.git
 pip3 install -r requirements.txt
-python3 ./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
+python3 ./eTFT-gif-converter.py -i example/windmill.gif -o windmill.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
 

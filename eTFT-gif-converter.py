@@ -62,6 +62,8 @@ class AnimationConverter:
             IMAGE_MAGICK_DIRECTORY + "convert",
             "-resize",
             str(TFT_SCREEN_WIDTH) + "x" + str(TFT_SCREEN_HEIGHT) + "^",
+            "-gravity", "center",
+            "-extent", str(TFT_SCREEN_WIDTH) + "x" + str(TFT_SCREEN_HEIGHT),
             "-coalesce",
             self.gif,
             OUTPUT_DIR + "/frame_%d.jpg",
@@ -128,7 +130,7 @@ if __name__ == "__main__":
 
     gif_file = args.input
     header_file = args.output
-    TFT_SCREEN_HEIGHT = args.width or 240
+    TFT_SCREEN_HEIGHT = args.height or 240
     TFT_SCREEN_WIDTH = args.width or 320
 
     if (CURRENT_OS == "Windows"):
