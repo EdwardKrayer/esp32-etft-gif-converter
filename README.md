@@ -13,7 +13,7 @@ GIF to header (.h) generator for the ESP32 eTFT screens.
 ## Pre-requisites
 
 Install [ImageMagick](https://imagemagick.org/), making sure you check the "Install legacy utilities (e.g. convert)" option in the installer.
-<img src="https://github.com/EdwardKrayer/esp32-etft-gif-converter/img/imagemagick-installer.png">
+<img src="https://github.com/EdwardKrayer/esp32-etft-gif-converter/raw/main/img/imagemagick-installer.png">
 
 
 ## Command Line Usage
@@ -27,17 +27,20 @@ eTFT-gif-converter.py
 				[-imdir <LOCATION OF IMAGE MAGICK CONVERT EXECUTABLE>]		Optional, defaults to "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/" or "/usr/bin/"
 ```
 
+
 ## Example (Windows)
 
 ```python
 ./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
 
+
 ## Example (Linux)
 
 ```python
 ./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "/usr/bin/"
 ```
+
 
 ### Complete Example
 
@@ -47,6 +50,7 @@ cd esp32-etft-gif-converter.git
 pip3 install -r requirements.txt
 python3 ./eTFT-gif-converter.py -i example/starcraft.gif -o starcraft.h -width 320 -height 240 -imdir "C:/Program Files/ImageMagick-7.1.0-Q16-HDRI/"
 ```
+
 
 ### Adding it to Arduino / PlatformIO / C++ 
 
@@ -70,6 +74,7 @@ void loop() {
     }
 }
 ```
+
 
 ## Thanks to Original Author / Project
 Alex Arce @ [https://github.com/alex-arce/esp32-etft-gif-converter/](https://github.com/alex-arce/esp32-etft-gif-converter/)
